@@ -1,0 +1,40 @@
+{
+  "name": "mix-map",
+  "version": "1.0.0",
+  "description": "mix baidu map, google map, gaode map, openlayer map ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oxgos/mix-map.git"
+  },
+  "keywords": [
+    "baidu",
+    "map",
+    "google",
+    "map",
+    "gaode",
+    "map",
+    "openlayer",
+    "map"
+  ],
+  "author": "GJW",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oxgos/mix-map/issues"
+  },
+  "homepage": "https://github.com/oxgos/mix-map#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "gcoord": "^0.2.3",
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^2.2.0"
+  }
+}

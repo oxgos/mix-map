@@ -1,5 +1,5 @@
 const path = require('path')
-const UglifyJsPlugin = require('uglify-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -11,6 +11,9 @@ module.exports = {
     library: 'mixMap', // 库名称
     libraryTarget: 'umd', // 兼容浏览器,es6,node导入方式
     umdNamedDefine: true
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
   },
   module: {
     rules: [

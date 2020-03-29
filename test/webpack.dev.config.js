@@ -1,16 +1,25 @@
+const fs = require('fs')
 const path = require('path')
-const UglifyJsPlugin = require('uglify-webpack-plugin')
+const VuePlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  mode: 'production',
-  entry: './lib/index.js',
+  mode: 'development',
+  entry: (function () {
+    return fs.readdirSync(__dirname).reduce((entries, dir) => {
+      const fullDir = path.join(__dirname, dir)
+      const entry = path.join(fullDir, 'index.js')
+      if (fs.statSync(fullDir).isDirectory()) {
+        entries[dir] = entry
+      }
+      return entries
+    }, {})
+  })(),
   output: {
-    filename: 'mixMap.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    library: 'mixMap', // 库名称
-    libraryTarget: 'umd', // 兼容浏览器,es6,node导入方式
-    umdNamedDefine: true
+    filename: 'bundle.js',
+    publicPath: '__build__'
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
   },
   module: {
     rules: [
@@ -18,10 +27,17 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
       }
     ]
   },
   plugins: [
-    new UglifyJsPlugin()
+    new VuePlugin()
   ]
 }

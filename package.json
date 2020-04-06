@@ -4,6 +4,7 @@
   "description": "mix baidu map, google map, gaode map, openlayer map",
   "main": "index.js",
   "scripts": {
+    "dev": "node ./test/server.js",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
@@ -28,17 +29,21 @@
   "homepage": "https://github.com/oxgos/mix-map#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "gcoord": "^0.2.3"
+    "gcoord": "^0.2.3",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
     "babel-loader": "^8.0.0-beta.0",
+    "core-js": "^2.6.11",
     "css-loader": "^3.4.2",
+    "express-urlrewrite": "^1.2.0",
     "style-loader": "^1.1.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-loader": "^15.9.1",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2"

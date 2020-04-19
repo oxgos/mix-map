@@ -12,6 +12,11 @@ app.use(
     stats: {
       colors: true,
       chunks: false
+    },
+    lazy: false,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: true
     }
   })
 )

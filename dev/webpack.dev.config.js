@@ -21,7 +21,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
   },
-  watch: true,
   module: {
     rules: [
       {
@@ -38,6 +37,18 @@ module.exports = {
         use: [
           { loader: "style-loader" },
           { loader: "css-loader" }
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+              publicPath: '/__build__/'
+            }
+          }
         ]
       }
     ]

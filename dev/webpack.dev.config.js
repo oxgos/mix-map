@@ -15,8 +15,10 @@ module.exports = {
     }, {})
   })(),
   output: {
-    filename: 'bundle.js',
-    publicPath: '__build__'
+    path: path.join(__dirname, '__build__'),
+    filename: '[name].js',
+    chunkFilename: '[id].chunk.js',
+    publicPath: '/__build__/'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

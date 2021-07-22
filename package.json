@@ -12,14 +12,10 @@
     "url": "https://github.com/oxgos/mix-map.git"
   },
   "keywords": [
-    "baidu",
-    "map",
-    "google",
-    "map",
-    "gaode",
-    "map",
-    "openlayer",
-    "map"
+    "baidu map",
+    "google map",
+    "gaode map",
+    "openlayer map"
   ],
   "author": "GJW",
   "license": "ISC",
@@ -30,6 +26,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "gcoord": "^0.2.3",
+    "ol": "^6.5.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {

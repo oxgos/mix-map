@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/oxgos/mix-map#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "gcoord": "^0.2.3",
     "ol": "^6.5.0",
     "vue": "^2.6.11"
